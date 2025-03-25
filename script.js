@@ -1,10 +1,11 @@
-// ฟังก์ชันดาวน์โหลดไฟล์
-function downloadFile() {
+function downloadFile(url) {
     const link = document.createElement('a');
-    link.href = ''; // ใส่ URL ของไฟล์ที่ต้องการดาวน์โหลด
-    link.download = 'yourfile.zip'; // กำหนดชื่อไฟล์
+    link.href = url; // URL ของไฟล์ที่ต้องการดาวน์โหลด
+    link.target = ''; // เปิดลิงก์ในแท็บใหม่ (เลือกใช้หรือลบออกได้)
+    link.rel = 'noopener noreferrer'; // เพิ่มความปลอดภัย
     link.click();
 }
+
 
 // ฟังก์ชันเปิด Discord
 function openDiscord() {
