@@ -28,7 +28,6 @@ body {
 }
 
 /* เส้นขยับด้านบนและล่าง */
-.container::before,
 .container::after {
     content: "";
     position: absolute;
