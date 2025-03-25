@@ -1,0 +1,307 @@
+/* กำหนดพื้นหลังสี #1e1e1e (RGB: 30, 30, 30) พร้อมลาย */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: rgb(30, 30, 30); /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/diagonal_stripes.png'); /* ลายพื้นหลัง */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none; /* ป้องกันการคัดลอกข้อความทั้งหมดใน body */
+}
+
+/* จัดการกับพื้นที่หลัก */
+.container {
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin-top: 30px;
+    opacity: 0;
+    position: relative;
+    padding: 20px 0;
+    animation: fadeInContainer 2s forwards;
+}
+
+/* เส้นขยับด้านบนและล่าง */
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 50%, rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-50%);
+    animation: movingLine 5s linear infinite;
+}
+
+.container::before {
+    top: -10px;
+}
+
+.container::after {
+    bottom: -10px;
+}
+
+/* อนิเมชั่นขยับเส้น */
+@keyframes movingLine {
+    0% {
+        width: 0;
+        opacity: 0.5;
+    }
+    50% {
+        width: 80%;
+        opacity: 1;
+    }
+    100% {
+        width: 0;
+        opacity: 0.5;
+    }
+}
+
+/* สไตล์ตัวนับผู้เข้าชม */
+#visitor-count {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(30, 30, 30, 0.9); /* เปลี่ยนเป็นสีดำเฉด 30,30,30 */
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    /* เพิ่มอนิเมชั่น */
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInScale 1s forwards, glowEffect 2s infinite alternate, bounceEffect 4s infinite ease-in-out;
+}
+
+/* เพิ่มไอคอนให้ดูดีขึ้น */
+#visitor-count i {
+    color: yellow;
+    font-size: 18px;
+}
+
+/* อนิเมชั่นทำให้ค่อยๆ ปรากฏ */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* อนิเมชั่นเรืองแสง */
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* อนิเมชั่นกระเด้งเบาๆ (Bounce Loop) */
+@keyframes bounceEffect {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* เพิ่มไอคอนให้ดูดีขึ้น */
+#visitor-count i {
+    color: yellow;
+    font-size: 18px;
+}
+
+/* อนิเมชั่นทำให้ค่อยๆ ปรากฏ */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* อนิเมชั่นเรืองแสง */
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* ชื่อเว็บไซต์ */
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    animation: slideInUp 2s ease-out, titleLoop 5s infinite;
+}
+
+/* อนิเมชั่นทำให้ title ขยับขึ้น */
+@keyframes slideInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* อนิเมชั่นสำหรับการทำให้ title เคลื่อนที่ในลูป */
+@keyframes titleLoop {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* สไตล์ปุ่ม */
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+/* ปุ่ม YouTube */
+.youtube-button {
+    background-color: #FF0000;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 0 10px #FF0000;
+}
+
+.youtube-button:hover {
+    background-color: #cc0000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 4px #FF0000;
+}
+
+/* ปุ่มดาวน์โหลด */
+.download-button {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 0 10px #4CAF50;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 4px #4CAF50;
+}
+
+/* ปุ่ม Discord */
+.discord-button {
+    background-color: #7289DA;
+    color: white;
+    box-shadow: 0 0 10px #7289DA;
+}
+
+.discord-button:hover {
+    background-color: #5b6eae;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 4px #7289DA;
+}
+
+/* สไตล์สำหรับรูปภาพตรงกลาง */
+.center-image {
+    margin-top: 50px;
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: zoomIn 2s forwards, fadeIn 2s forwards, loopAnimation 5s infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* อนิเมชั่นสำหรับการขยายรูป (Zoom In) และหมุนรูป (Rotate) */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1) rotate(15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* อนิเมชั่นสำหรับการทำให้รูปค่อยๆ ปรากฏ */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* อนิเมชั่นสำหรับการวนลูป */
+@keyframes loopAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* อนิเมชั่นสำหรับการทำให้ container ค่อยๆ ปรากฏ */
+@keyframes fadeInContainer {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* เพิ่มการขยายและขยับรูปเมื่อ hover */
+.center-image:hover {
+    transform: scale(1.1) translateY(-15px) rotate(5deg);
+    box-shadow: 0 0 25px 6px rgba(0, 0, 0, 0.6);
+}
