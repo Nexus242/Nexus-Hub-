@@ -1,21 +1,21 @@
-/* กำหนดพื้นหลังสี #1e1e1e (RGB: 30, 30, 30) พร้อมลาย */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    padding: 50px;
-    background-color: rgb(30, 30, 30); /* กำหนดพื้นหลังเป็นสีเทาเข้ม */
-    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/diagonal_stripes.png'); /* ลายพื้นหลัง */
+    background-color: rgb(20, 20, 20);
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/topography.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    user-select: none; /* ป้องกันการคัดลอกข้อความทั้งหมดใน body */
+    color: white;
+    user-select: none;
 }
 
-/* จัดการกับพื้นที่หลัก */
 .container {
     text-align: center;
     color: white;
@@ -26,8 +26,6 @@ body {
     padding: 20px 0;
     animation: fadeInContainer 2s forwards;
 }
-
-/* เส้นขยับด้านบนและล่าง */
 .container::after {
     content: "";
     position: absolute;
@@ -46,8 +44,6 @@ body {
 .container::after {
     bottom: -10px;
 }
-
-/* อนิเมชั่นขยับเส้น */
 @keyframes movingLine {
     0% {
         width: 0;
@@ -62,8 +58,6 @@ body {
         opacity: 0.5;
     }
 }
-
-/* ชื่อเว็บไซต์ */
 .title {
     font-size: 3rem;
     font-weight: bold;
@@ -71,8 +65,6 @@ body {
     margin-bottom: 30px;
     animation: slideInUp 2s ease-out, titleLoop 5s infinite;
 }
-
-/* อนิเมชั่นทำให้ title ขยับขึ้น */
 @keyframes slideInUp {
     0% {
         transform: translateY(30px);
@@ -83,8 +75,6 @@ body {
         opacity: 1;
     }
 }
-
-/* อนิเมชั่นสำหรับการทำให้ title เคลื่อนที่ในลูป */
 @keyframes titleLoop {
     0% {
         transform: translateY(0);
@@ -96,8 +86,6 @@ body {
         transform: translateY(0);
     }
 }
-
-/* สไตล์ปุ่ม */
 button {
     padding: 15px 30px;
     font-size: 16px;
@@ -107,48 +95,37 @@ button {
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
-
-/* ปุ่ม YouTube */
 .youtube-button {
     background-color: #FF0000;
     color: white;
     font-size: 18px;
     box-shadow: 0 0 10px #FF0000;
 }
-
 .youtube-button:hover {
     background-color: #cc0000;
     transform: scale(1.1);
     box-shadow: 0 0 20px 4px #FF0000;
 }
-
-/* ปุ่มดาวน์โหลด */
 .download-button {
     background-color: #4CAF50;
     color: white;
     box-shadow: 0 0 10px #4CAF50;
 }
-
 .download-button:hover {
     background-color: #45a049;
     transform: scale(1.1);
     box-shadow: 0 0 20px 4px #4CAF50;
 }
-
-/* ปุ่ม Discord */
 .discord-button {
     background-color: #7289DA;
     color: white;
     box-shadow: 0 0 10px #7289DA;
 }
-
 .discord-button:hover {
     background-color: #5b6eae;
     transform: scale(1.1);
     box-shadow: 0 0 20px 4px #7289DA;
 }
-
-/* สไตล์สำหรับรูปภาพตรงกลาง */
 .center-image {
     margin-top: 50px;
     width: 500px;
@@ -159,8 +136,17 @@ button {
     animation: zoomIn 2s forwards, fadeIn 2s forwards, loopAnimation 5s infinite;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, #222, #111);
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 
-/* อนิเมชั่นสำหรับการขยายรูป (Zoom In) และหมุนรูป (Rotate) */
 @keyframes zoomIn {
     0% {
         opacity: 0;
@@ -174,8 +160,6 @@ button {
         transform: scale(1) rotate(0deg);
     }
 }
-
-/* อนิเมชั่นสำหรับการทำให้รูปค่อยๆ ปรากฏ */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -184,8 +168,6 @@ button {
         opacity: 1;
     }
 }
-
-/* อนิเมชั่นสำหรับการวนลูป */
 @keyframes loopAnimation {
     0% {
         transform: scale(1);
@@ -197,8 +179,6 @@ button {
         transform: scale(1);
     }
 }
-
-/* อนิเมชั่นสำหรับการทำให้ container ค่อยๆ ปรากฏ */
 @keyframes fadeInContainer {
     0% {
         opacity: 0;
@@ -209,8 +189,6 @@ button {
         transform: translateY(0);
     }
 }
-
-/* เพิ่มการขยายและขยับรูปเมื่อ hover */
 .center-image:hover {
     transform: scale(1.1) translateY(-15px) rotate(5deg);
     box-shadow: 0 0 25px 6px rgba(0, 0, 0, 0.6);
