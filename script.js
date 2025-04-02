@@ -1,5 +1,5 @@
 function downloadFile() {
-    window.open('https://filerift.com/file/f93wBh74z5', '_blank'); 
+    window.open('https://filerift.com/file/Wg39geUMmX', '_blank'); 
 }
 function openDiscord() {
     window.open('https://discord.gg/kbeR5CHuFJ', '_blank'); 
